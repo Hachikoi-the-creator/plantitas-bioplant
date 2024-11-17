@@ -1,277 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./detalle-css.css" />
     <title>Corona de Cristo - BioPlant</title>
-    <style>
-        /* Estilos básicos */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            overflow: auto;
-        }
-
-        /* Encabezado */
-        header {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Botón de atrás en el encabezado */
-        .back-button {
-            position: absolute;
-            left: 20px;
-        }
-
-        .back-button a {
-            color: white;
-            text-decoration: none;
-            background-color: #333;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        /* Contenedor principal */
-        .container {
-            max-width: 1200px;
-            width: 90%;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            justify-content: space-around;
-            padding: 2rem 0;
-            position: relative;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-        }
-
-        /* Animación de entrada */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Estilo para el contenedor de información */
-        .info {
-            flex: 1;
-            padding: 1rem;
-            border: 1px solid #4CAF50;
-            border-radius: 8px;
-            background-color: white;
-        }
-
-        .info h2 {
-            color: #4CAF50;
-        }
-
-        /* Estilo para la imagen */
-        .image-container img {
-            max-width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #4CAF50;
-        }
-
-        /* Estilos de las burbujas de texto */
-        .bubble {
-            position: absolute;
-            background-color: rgba(76, 175, 80, 0.8);
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 0.9em;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            font-weight: bold;
-        }
-
-        /* Pie de página fijo */
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            width: 100%;
-            position: static;
-            left: 0;
-            bottom: 0;
-        }
-
-        /* Estilos del emoji y botón de agua */
-        .water-status {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: green;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        /* Botón de regar */
-        .water-button {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        /* Ajustes específicos para el modo móvil */
-        @media (max-width: 768px) {
-            header h1 {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 1.5em;
-                margin-top: 0.5em;
-            }
-
-            .back-button a {
-                padding: 5px 8px;
-                font-size: 12px;
-            }
-
-            .container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .image-container {
-                width: 80%; /* Reducción del tamaño de la imagen en móvil */
-                height: auto;
-            }
-
-            .info {
-                width: 100%;
-                margin-top: 1rem;
-            }
-
-            .water-button {
-                margin-top: 1rem;
-                width: 100%;
-                padding: 10px;
-                font-size: 14px;
-                margin-bottom: 20px;
-            }
-
-            footer {
-                position: static; /* Pie de página no fijo en móvil */
-            }
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Encabezado -->
     <header>
-        <div class="back-button">
-            <a href="index.html">Atrás</a>
-        </div>
-        <h1>BioPlant</h1>
+      <div class="back-button">
+        <a href="index.html">Atrás</a>
+      </div>
+      <h1>BioPlant</h1>
     </header>
 
     <!-- Contenedor principal de imagen e información -->
     <div class="container" id="content">
-        <div class="image-container">
-            <img src="https://plantalium.com/cdn/shop/products/CoronadeCristoSandia.png?v=1690305903&width=1445" alt="Corona de Cristo">
-            <!-- Burbujas de consejos de cuidado -->
-            <div class="bubble" id="bubble1" style="top: 10%; left: 20%;">Riega moderadamente.</div>
-            <div class="bubble" id="bubble2" style="top: 40%; right: 10%;">Prefiere luz directa.</div>
-            <div class="bubble" id="bubble3" style="bottom: 10%; left: 50%;">Resistente al calor.</div>
-            <div class="bubble" id="bubble4" style="top: 30%; left: 40%;">Evita el exceso de riego.</div>
-            <div class="bubble" id="bubble5" style="bottom: 20%; right: 30%;">Ideal para exteriores.</div>
+      <div class="image-container">
+        <img
+          src="https://plantalium.com/cdn/shop/products/CoronadeCristoSandia.png?v=1690305903&width=1445"
+          alt="Corona de Cristo"
+        />
+        <!-- Burbujas de consejos de cuidado -->
+        <div class="bubble" id="bubble1" style="top: 10%; left: 20%">
+          Riega moderadamente.
         </div>
-        <button class="water-button" id="waterButton">Regar</button>
-        <div class="info">
-            <h2>Cuidado de Corona de Cristo</h2>
-            <p><strong>Riego:</strong> Riega moderadamente, evitando encharcar.</p>
-            <p><strong>Luz:</strong> Prefiere luz directa y abundante.</p>
-            <p><strong>Temperatura:</strong> 20°C - 30°C.</p>
-            <p><strong>Humedad:</strong> Baja humedad.</p>
-            <p><strong>Fertilización:</strong> Fertiliza cada 2-3 semanas en primavera y verano.</p>
+        <div class="bubble" id="bubble2" style="top: 40%; right: 10%">
+          Prefiere luz directa.
         </div>
+        <div class="bubble" id="bubble3" style="bottom: 10%; left: 50%">
+          Resistente al calor.
+        </div>
+        <div class="bubble" id="bubble4" style="top: 30%; left: 40%">
+          Evita el exceso de riego.
+        </div>
+        <div class="bubble" id="bubble5" style="bottom: 20%; right: 30%">
+          Ideal para exteriores.
+        </div>
+      </div>
+      <button class="water-button" id="waterButton">Regar</button>
+      <div class="info">
+        <h2>Cuidado de Corona de Cristo</h2>
+        <p><strong>Riego:</strong> Riega moderadamente, evitando encharcar.</p>
+        <p><strong>Luz:</strong> Prefiere luz directa y abundante.</p>
+        <p><strong>Temperatura:</strong> 20°C - 30°C.</p>
+        <p><strong>Humedad:</strong> Baja humedad.</p>
+        <p>
+          <strong>Fertilización:</strong> Fertiliza cada 2-3 semanas en
+          primavera y verano.
+        </p>
+      </div>
     </div>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 BioPlant - Todos los derechos reservados</p>
+      <p>&copy; 2024 BioPlant - Todos los derechos reservados</p>
     </footer>
 
     <div class="water-status" id="waterStatus">
-        <span id="face" class="sad-face">😞</span>
+      <span id="face" class="sad-face">😞</span>
     </div>
 
     <script>
-        const waterButton = document.getElementById('waterButton');
-        const waterStatus = document.getElementById('waterStatus');
-        const face = document.getElementById('face');
+      const waterButton = document.getElementById("waterButton");
+      const waterStatus = document.getElementById("waterStatus");
+      const face = document.getElementById("face");
 
-        // Utiliza una clave única para Corona de Cristo en localStorage
-        const plantKey = 'isWateredCoronaDeCristo';
-        let isWatered = localStorage.getItem(plantKey) === 'true';
+      // Utiliza una clave única para Corona de Cristo en localStorage
+      const plantKey = "isWateredCoronaDeCristo";
+      let isWatered = localStorage.getItem(plantKey) === "true";
 
-        function updateWaterStatus() {
-            if (isWatered) {
-                waterButton.classList.add('green');
-                waterButton.classList.remove('red');
-                waterButton.textContent = 'Ya está regado';
-                waterStatus.style.backgroundColor = 'green';
-                face.textContent = '😊';
-            } else {
-                waterButton.classList.remove('green');
-                waterButton.classList.add('red');
-                waterButton.textContent = 'Regar';
-                waterStatus.style.backgroundColor = 'red';
-                face.textContent = '😞';
-            }
+      function updateWaterStatus() {
+        if (isWatered) {
+          waterButton.classList.add("green");
+          waterButton.classList.remove("red");
+          waterButton.textContent = "Ya está regado";
+          waterStatus.style.backgroundColor = "green";
+          face.textContent = "😊";
+        } else {
+          waterButton.classList.remove("green");
+          waterButton.classList.add("red");
+          waterButton.textContent = "Regar";
+          waterStatus.style.backgroundColor = "red";
+          face.textContent = "😞";
         }
+      }
 
-        waterButton.addEventListener('click', function() {
-            isWatered = !isWatered;
-            localStorage.setItem(plantKey, isWatered);
-            updateWaterStatus();
-        });
-
+      waterButton.addEventListener("click", function () {
+        isWatered = !isWatered;
+        localStorage.setItem(plantKey, isWatered);
         updateWaterStatus();
+      });
+
+      updateWaterStatus();
     </script>
-</body>
+  </body>
 </html>
