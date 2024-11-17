@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geranio - BioPlant</title>
+    <style>
+      /* Estilos básicos */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        overflow: auto; /* Permite desplazamiento */
+      }
+
+      /* Encabezado */
+      header {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 1em 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      /* Botón de atrás en el encabezado */
+      .back-button {
+        position: absolute;
+        left: 20px;
+      }
+
+      .back-button a {
+        color: white;
+        text-decoration: none;
+        background-color: #333;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      /* Contenedor principal */
+      .container {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-around;
+        padding: 2rem 0;
+        position: relative;
+        opacity: 0; /* Inicialmente invisible */
+        animation: fadeIn 3s forwards; /* Animación de entrada */
+      }
+
+      /* Animación de deslizamiento verde */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Estilo para el contenedor de información */
+      .info {
+        flex: 1;
+        padding: 1rem;
+        border: 1px solid #4caf50;
+        border-radius: 8px;
+        background-color: white;
+      }
+
+      .info h2 {
+        color: #4caf50;
+      }
+
+      /* Estilo para la imagen */
+      .image-container img {
+        max-width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #4caf50;
+      }
+
+      /* Estilos de las burbujas de texto */
+      .bubble {
+        position: absolute;
+        background-color: rgba(76, 175, 80, 0.8);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+      }
+
+      footer {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        width: 100%;
+        position: relative; /* Cambiado para que no quede fijo en móvil */
+        z-index: 1000; /* Asegura que esté siempre sobre el contenido */
+      }
+
+      .water-status {
+        position: fixed;
+        /* top: 15%;
+            left: 50%; */
+        z-index: 200;
+        bottom: 1rem;
+        right: 1px;
+        /* transform: translateX(-50%); */
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        opacity: 0.7;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .water-button {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .water-button.green {
+        background-color: green;
+      }
+
+      .water-button.red {
+        background-color: red;
+      }
+
+      /* Estilos específicos para móvil (copiados del diseño de Cactus) */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        .container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .image-container img {
+          width: 90%;
+          max-height: 250px;
+          object-fit: cover;
+        }
+
+        .info {
+          width: 90%;
+          text-align: center;
+        }
+
+        footer {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="back-button">
+        <a href="index.html">Atrás</a>
+      </div>
+      <h1>BioPlant</h1>
+    </header>
+
+    <!-- Contenedor principal de imagen e información -->
+    <div class="container" id="content">
+      <div class="image-container">
+        <img
+          src="https://png.pngtree.com/png-vector/20240910/ourmid/pngtree-a-flowering-geranium-plant-in-red-clay-pot-png-image_13807796.png"
+          alt="Geranio"
+        />
+        <!-- Burbujas de consejos de cuidado -->
+        <div class="bubble" id="bubble1" style="top: 10%; left: 20%">
+          Riega cuando el suelo esté seco.
+        </div>
+        <div class="bubble" id="bubble2" style="top: 40%; right: 10%">
+          Prefiere luz directa del sol.
+        </div>
+        <div class="bubble" id="bubble3" style="bottom: 10%; left: 50%">
+          Protege del frío extremo.
+        </div>
+        <div class="bubble" id="bubble4" style="top: 30%; left: 40%">
+          Asegura un drenaje adecuado.
+        </div>
+        <div class="bubble" id="bubble5" style="bottom: 20%; right: 30%">
+          Fertiliza cada 15 días.
+        </div>
+      </div>
+      <div class="info">
+        <h2>Cuidado del Geranio</h2>
+        <p><strong>Riego:</strong> Riega cuando el suelo esté seco.</p>
+        <p><strong>Luz:</strong> Prefiere luz directa del sol.</p>
+        <p><strong>Temperatura:</strong> 15°C - 25°C.</p>
+        <p><strong>Humedad:</strong> Moderada.</p>
+        <p>
+          <strong>Fertilización:</strong> Abonar cada 15 días en primavera y
+          verano.
+        </p>
+        <button class="water-button" id="waterButton">Regar</button>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>&copy; 2024 BioPlant - Todos los derechos reservados</p>
+    </footer>
+
+    <div class="water-status" id="waterStatus">
+      <span id="face" class="sad-face">😞</span>
+    </div>
+  </body>
+</html>
+
+<script>
+  const waterButton = document.getElementById("waterButton");
+  const waterStatus = document.getElementById("waterStatus");
+  const face = document.getElementById("face");
+
+  let isWatered = localStorage.getItem("isWateredGeranio") === "true";
+
+  function updateWaterStatus() {
+    if (isWatered) {
+      waterButton.classList.add("green");
+      waterButton.classList.remove("red");
+      waterButton.textContent = "Ya está regado";
+      waterStatus.style.backgroundColor = "green";
+      face.textContent = "😊";
+    } else {
+      waterButton.classList.remove("green");
+      waterButton.classList.add("red");
+      waterButton.textContent = "Regar";
+      waterStatus.style.backgroundColor = "red";
+      face.textContent = "😞";
+    }
+  }
+
+  waterButton.addEventListener("click", function () {
+    isWatered = !isWatered;
+    localStorage.setItem("isWateredGeranio", isWatered);
+    updateWaterStatus();
+  });
+
+  updateWaterStatus();
+</script>
