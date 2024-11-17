@@ -59,12 +59,19 @@
     </footer>
 
     <div class="water-status" id="waterStatus">
-      <span id="face" class="sad-face">😞</span>
+      <img
+        src="./imgs/sad.svg"
+        alt="plant-feelings"
+        id="emoji-img"
+        width="50"
+        height="50"
+      />
     </div>
 
     <script>
       const waterButton = document.getElementById("waterButton");
       const waterStatus = document.getElementById("waterStatus");
+      const plantImg = document.getElementById("emoji-img");
       const face = document.getElementById("face");
 
       // Utiliza una clave única para Sábila en localStorage
@@ -77,13 +84,15 @@
           waterButton.classList.remove("red");
           waterButton.textContent = "Ya está regado";
           waterStatus.style.backgroundColor = "green";
-          face.textContent = "😊";
+          //   face.textContent = "😊";
+          plantImg.src = "./imgs/happy.svg";
         } else {
           waterButton.classList.remove("green");
           waterButton.classList.add("red");
           waterButton.textContent = "Regar";
           waterStatus.style.backgroundColor = "red";
-          face.textContent = "😞";
+          //   face.textContent = "😞";
+          plantImg.src = "./imgs/sad.svg";
         }
       }
 
