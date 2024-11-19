@@ -9,6 +9,10 @@
     <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon" />
     <title>BioPlant - Tienda de Plantas</title>
     <style>
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
       /* Estilos Generales */
       body {
         font-family: Arial, sans-serif;
@@ -150,6 +154,7 @@
 
       /* Pie de Página */
       footer {
+        width: 100%;
         background-color: #4caf50;
         color: white;
         text-align: center;
@@ -186,141 +191,142 @@
     <!-- Animación de Pantalla Verde -->
     <div class="screen-overlay">BioPlant</div>
 
-    <!-- Encabezado -->
-    <header>
-      <h1>BioPlant</h1>
-    </header>
+    <main>
+      <!-- Encabezado -->
+      <header>
+        <h1>BioPlant</h1>
+      </header>
 
-    <!-- Sección "Bienvenido a BioPlant" -->
-    <section class="welcome">
-      <h2>Bienvenido a BioPlant</h2>
-      <p>
-        En BioPlant nos apasiona llevar la naturaleza a tu hogar. Ofrecemos una
-        amplia variedad de plantas de interior y exterior, con el compromiso de
-        brindarte el mejor cuidado y atención. Ya sea que busques decorar tu
-        espacio o mejorar tu bienestar, estamos aquí para ayudarte a encontrar
-        la planta perfecta.
-      </p>
-    </section>
+      <!-- Sección "Bienvenido a BioPlant" -->
+      <section class="welcome">
+        <h2>Bienvenido a BioPlant</h2>
+        <p>
+          En BioPlant nos apasiona llevar la naturaleza a tu hogar. Ofrecemos
+          una amplia variedad de plantas de interior y exterior, con el
+          compromiso de brindarte el mejor cuidado y atención. Ya sea que
+          busques decorar tu espacio o mejorar tu bienestar, estamos aquí para
+          ayudarte a encontrar la planta perfecta.
+        </p>
+      </section>
 
-    <!-- Sección de Productos -->
-    <h2 class="sub-title">Plantas</h2>
-    <section class="products">
-      <div class="product">
-        <img
-          src="https://png.pngtree.com/png-clipart/20230623/original/pngtree-aloe-vera-plant-pot-transparent-png-image_9204075.png"
-          alt="Aloe Vera"
-        />
-        <div>
-          <h3>Aloe Vera</h3>
-          <p class="product-price">$60 mxn</p>
+      <!-- Sección de Productos -->
+      <h2 class="sub-title">Plantas</h2>
+      <section class="products">
+        <div class="product">
+          <img
+            src="https://png.pngtree.com/png-clipart/20230623/original/pngtree-aloe-vera-plant-pot-transparent-png-image_9204075.png"
+            alt="Aloe Vera"
+          />
+          <div>
+            <h3>Aloe Vera</h3>
+            <p class="product-price">$60 mxn</p>
+          </div>
         </div>
-      </div>
-      <div class="product">
-        <img
-          src="https://png.pngtree.com/png-vector/20240807/ourmid/pngtree-decorative-potted-cactus-plant-png-image_13404019.png"
-          alt="Cactus"
-        />
-        <div>
-          <h3>Cactus</h3>
-          <p class="product-price">$130 mxn</p>
+        <div class="product">
+          <img
+            src="https://png.pngtree.com/png-vector/20240807/ourmid/pngtree-decorative-potted-cactus-plant-png-image_13404019.png"
+            alt="Cactus"
+          />
+          <div>
+            <h3>Cactus</h3>
+            <p class="product-price">$130 mxn</p>
+          </div>
         </div>
-      </div>
-      <div class="product">
-        <img
-          src="https://plantalium.com/cdn/shop/products/CoronadeCristoSandia.png?v=1690305903&width=1445"
-          alt="Corona de Cristo"
-        />
-        <div>
-          <h3>Corona de Cristo</h3>
-          <p class="product-price">$75 mxn</p>
+        <div class="product">
+          <img
+            src="https://plantalium.com/cdn/shop/products/CoronadeCristoSandia.png?v=1690305903&width=1445"
+            alt="Corona de Cristo"
+          />
+          <div>
+            <h3>Corona de Cristo</h3>
+            <p class="product-price">$75 mxn</p>
+          </div>
         </div>
-      </div>
-      <div class="product">
-        <img
-          src="https://png.pngtree.com/png-vector/20240910/ourmid/pngtree-a-flowering-geranium-plant-in-red-clay-pot-png-image_13807796.png"
-          alt="Geranio"
-        />
-        <div>
-          <h3>Geranio</h3>
-          <p class="product-price">$70 mxn</p>
+        <div class="product">
+          <img
+            src="https://png.pngtree.com/png-vector/20240910/ourmid/pngtree-a-flowering-geranium-plant-in-red-clay-pot-png-image_13807796.png"
+            alt="Geranio"
+          />
+          <div>
+            <h3>Geranio</h3>
+            <p class="product-price">$70 mxn</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <h2 class="sub-title">Productos</h2>
-    <section class="products">
-      <div class="product">
-        <img
-          class="product-img-fit"
-          src="./imgs/products/aerosol.png"
-          alt="Aerosol"
-        />
-        <div>
-          <h3>Aerosol</h3>
-          <p>
-            Protege tus plantas de plagas con nuestro insecticida 100% natural y
-            efectivo. Diseñado para combatir insectos como pulgones,
-            cochinillas, ácaros y mosca blanca, sin dañar tus plantas ni el
-            medio ambiente. Ideal para todo tipo de jardines, huertos y plantas
-            de interior.
-          </p>
-          <p class="product-price">$60 - 500ml.</p>
+      <h2 class="sub-title">Productos</h2>
+      <section class="products">
+        <div class="product">
+          <img
+            class="product-img-fit"
+            src="./imgs/products/aerosol.png"
+            alt="Aerosol"
+          />
+          <div>
+            <h3>Aerosol</h3>
+            <p>
+              Protege tus plantas de plagas con nuestro insecticida 100% natural
+              y efectivo. Diseñado para combatir insectos como pulgones,
+              cochinillas, ácaros y mosca blanca, sin dañar tus plantas ni el
+              medio ambiente. Ideal para todo tipo de jardines, huertos y
+              plantas de interior.
+            </p>
+            <p class="product-price">$60 - 500ml.</p>
+          </div>
         </div>
-      </div>
-      <div class="product">
-        <img
-          class="product-img-fit"
-          src="./imgs/products/fertilizante.png"
-          alt="Fertilizante"
-        />
-        <div>
-          <h3>Fertilizante</h3>
-          <p>
-            Dale a tus plantas el impulso que necesitan para crecer fuertes y
-            saludables con nuestro fertilizante de alta calidad. Formulado con
-            una mezcla equilibrada de nutrientes esenciales, promueve un
-            crecimiento vigoroso, hojas más verdes y flores más vibrantes.
-          </p>
-          <p class="product-price">$30mx - 500gr.</p>
+        <div class="product">
+          <img
+            class="product-img-fit"
+            src="./imgs/products/fertilizante.png"
+            alt="Fertilizante"
+          />
+          <div>
+            <h3>Fertilizante</h3>
+            <p>
+              Dale a tus plantas el impulso que necesitan para crecer fuertes y
+              saludables con nuestro fertilizante de alta calidad. Formulado con
+              una mezcla equilibrada de nutrientes esenciales, promueve un
+              crecimiento vigoroso, hojas más verdes y flores más vibrantes.
+            </p>
+            <p class="product-price">$30mx - 500gr.</p>
+          </div>
         </div>
-      </div>
-      <div class="product">
-        <img
-          class="product-img-fit"
-          src="./imgs/products/bolsa-de-tierra-min.png"
-          alt="bolsa de tierra"
-        />
-        <div>
-          <h3>Tierra preparada</h3>
-          <p>
-            Tierra para plantas: Mejora el crecimiento y salud de tus plantas
-            con nuestra mezcla de tierra especialmente formulada. Rica en
-            nutrientes, aireada y con excelente retención de humedad, es ideal
-            para todo tipo de plantas. Perfecta para macetas, jardines y
-            trasplantes. ¡Dale a tus plantas la base que necesitan para florecer
-            y crecer fuertes!
-          </p>
-          <p class="product-price">$50 - 1kg.</p>
+        <div class="product">
+          <img
+            class="product-img-fit"
+            src="./imgs/products/bolsa-de-tierra-min.png"
+            alt="bolsa de tierra"
+          />
+          <div>
+            <h3>Tierra preparada</h3>
+            <p>
+              Tierra para plantas: Mejora el crecimiento y salud de tus plantas
+              con nuestra mezcla de tierra especialmente formulada. Rica en
+              nutrientes, aireada y con excelente retención de humedad, es ideal
+              para todo tipo de plantas. Perfecta para macetas, jardines y
+              trasplantes. ¡Dale a tus plantas la base que necesitan para
+              florecer y crecer fuertes!
+            </p>
+            <p class="product-price">$50 - 1kg.</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Atención al Cliente y Redes Sociales -->
-    <div class="atencion">
-      <p>
-        Atención al cliente: contacto@bioplant.com | Teléfono: +123 456 7890
-      </p>
-      <div class="social-links">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
+      <!-- Atención al Cliente y Redes Sociales -->
+      <div class="atencion">
+        <p>
+          Atención al cliente: contacto@bioplant.com | Teléfono: +123 456 7890
+        </p>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
       </div>
-    </div>
-
+    </main>
     <!-- Pie de Página -->
-    <footer>
-      <p>&copy; 2024 BioPlant - Todos los derechos reservados</p>
-    </footer>
   </body>
+  <footer>
+    <p>&copy; 2024 BioPlant - Todos los derechos reservados</p>
+  </footer>
 </html>
