@@ -1,1 +1,0 @@
-console.log('App 3 is running');
