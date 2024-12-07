@@ -1,9 +1,102 @@
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background-color: #f1a7a0;
 }
 
-h1 {
-  color: #333;
+h2 {
+  color: #1aa301;
+  font-size: 24px;
+}
+
+h4 {
+}
+
+.container {
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.calendar-container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+.calendar-box {
+  background-color: #f1877e;
+  color: #1aa301;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  padding: 4px;
+  border-radius: 12px;
+  /* border: 1px dashed black; */
+  /* --- */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calendar-box:hover {
+  background-color: #f1a7a0;
+  cursor: pointer;
+}
+
+.calendar-box > * {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.calendar-box::marker {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  /* padding: 0; */
+}
+
+/* modal stuff */
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #f1a7a0;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+  position: relative;
+
+  & img {
+    width: 80%;
+    border-radius: 20px;
+    margin: 0 10% 5% 10%;
+    object-fit: cover;
+  }
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  border-color: #f1877e;
 }
